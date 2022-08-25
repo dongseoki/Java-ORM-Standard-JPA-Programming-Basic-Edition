@@ -1,4 +1,6 @@
-package hellojpa;
+package hellojpa.ch04_entity_mapping;
+
+import hellojpa.Member;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
