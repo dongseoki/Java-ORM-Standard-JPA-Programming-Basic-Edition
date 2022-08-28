@@ -26,4 +26,9 @@ public class Member {
     @JoinColumn(name = "TEAM_ID") // Member 객체의 team과 MEMBER 테이블의 TEAM_ID(FK)를 연관관계로 매핑한다는 뜻
     private Team team;
 
+    public void changeTeam(Team team){
+        this.setTeam(team);
+        team.getMembers().add(this);
+    }
+
 }
