@@ -1,3 +1,6 @@
+import domain.Order;
+import domain.OrderItem;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -12,6 +15,12 @@ public class JpaMain {
         transaction.begin();
 
         try{
+            Order order = new Order();
+            entityManager.persist(order);
+
+            OrderItem orderItem = new OrderItem();
+            entityManager.persist(orderItem);
+            order.addOrderItem(orderItem);
 
             transaction.commit();
         }catch (Exception e){
