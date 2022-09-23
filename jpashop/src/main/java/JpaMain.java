@@ -15,12 +15,12 @@ public class JpaMain {
         transaction.begin();
 
         try{
-            Order order = new Order();
-            entityManager.persist(order);
-
-            OrderItem orderItem = new OrderItem();
-            entityManager.persist(orderItem);
-            order.addOrderItem(orderItem);
+//            Order order = new Order();
+//            entityManager.persist(order);
+//
+//            OrderItem orderItem = new OrderItem();
+//            entityManager.persist(orderItem);
+//            order.addOrderItem(orderItem);
 
             transaction.commit();
         }catch (Exception e){
