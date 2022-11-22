@@ -1,3 +1,4 @@
+import domain.Book;
 import domain.Order;
 import domain.OrderItem;
 
@@ -21,6 +22,10 @@ public class JpaMain {
 //            OrderItem orderItem = new OrderItem();
 //            entityManager.persist(orderItem);
 //            order.addOrderItem(orderItem);
+            Book book = new Book();
+            book.setName("JPA book");
+            book.setAuthor("김영한");
+            entityManager.persist(book);
 
             transaction.commit();
         }catch (Exception e){
