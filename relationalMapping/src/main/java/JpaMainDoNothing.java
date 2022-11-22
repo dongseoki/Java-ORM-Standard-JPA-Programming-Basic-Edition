@@ -1,4 +1,5 @@
 import domain.Member;
+import domain.Movie;
 import domain.Team;
 
 import javax.persistence.EntityManager;
@@ -15,6 +16,8 @@ public class JpaMainDoNothing {
         transaction.begin();
 
         try {
+//            Movie movie = new Movie();
+
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
