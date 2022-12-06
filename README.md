@@ -11,5 +11,5 @@ jpashop
 * 배민처럼 주문을 가정함.
 
 relationalMapping
-* ch5-7 에서 사용. 
+* ch5-8 에서 사용. 
 * 학습용으로 사용하는 프로젝트. 
