@@ -1,6 +1,8 @@
 import domain.Member;
 import domain.Movie;
 import domain.Team;
+import persistAndOrphan.Child;
+import persistAndOrphan.Parent;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -17,6 +19,17 @@ public class JpaMainDoNothing {
 
         try {
 //            Movie movie = new Movie();
+            Parent parent = new Parent();
+            Child ch1 = new Child();
+            Child ch2 = new Child();
+            parent.addChild(ch1);
+            parent.addChild(ch2);
+            entityManager.persist(parent);
+            entityManager.flush();
+            entityManager.clear();
+            Parent findParent = entityManager.find(Parent.class, parent.getId());
+            findParent.getChildList().remove(0);
+
 
             transaction.commit();
         } catch (Exception e) {
