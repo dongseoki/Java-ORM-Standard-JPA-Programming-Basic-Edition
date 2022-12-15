@@ -1,4 +1,4 @@
-package hellojpa;
+package hellojpa.ch03_ch04;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import java.util.Date;
 //        sequenceName = "MEMBER_SEQ", // 매핑할 데이터베이스 시퀀스 이름.
 //        initialValue = 1, allocationSize = 1
 //)
-public class Member {
+public class OldMember {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEMBER_SEQ_GENERATOR")

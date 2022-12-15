@@ -1,6 +1,6 @@
-package hellojpa.ch03_persistence_context_management;
+package hellojpa.ch03_ch04.ch03_persistence_context_management;
 
-import hellojpa.Member;
+import hellojpa.ch03_ch04.OldMember;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -21,12 +21,12 @@ public class PersistenceContext {
 //            member.setName("hello");
 //            entityManager.persist(member);
             // 조회.
-            Member findMember = entityManager.find(Member.class,2L);
+            OldMember findOldMember = entityManager.find(OldMember.class,2L);
             // 조회.
-            Member findMember2 = entityManager.find(Member.class,2L);
+            OldMember findOldMember2 = entityManager.find(OldMember.class,2L);
 
             // 영속 엔티티 동일성
-            System.out.println("String.valueOf(findMember2==findMember) = " + String.valueOf(findMember2==findMember));
+            System.out.println("String.valueOf(findMember2==findMember) = " + String.valueOf(findOldMember2 == findOldMember));
 
 
             System.out.println("엔티티 수정 변경 감지.");

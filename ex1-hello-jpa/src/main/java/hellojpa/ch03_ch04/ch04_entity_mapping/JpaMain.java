@@ -1,6 +1,6 @@
-package hellojpa.ch04_entity_mapping;
+package hellojpa.ch03_ch04.ch04_entity_mapping;
 
-import hellojpa.Member;
+import hellojpa.ch03_ch04.OldMember;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -18,24 +18,24 @@ public class JpaMain {
 
         try{
 //            // 삽입.
-            Member member = new Member();
-            member.setUsername("hello");
-            entityManager.persist(member);
+            OldMember oldMember = new OldMember();
+            oldMember.setUsername("hello");
+            entityManager.persist(oldMember);
 
-            member = new Member();
-            member.setUsername("h2");
-            entityManager.persist(member);
+            oldMember = new OldMember();
+            oldMember.setUsername("h2");
+            entityManager.persist(oldMember);
 
 
 
             // 조회.
-            Member findMember = entityManager.find(Member.class,2L);
+            OldMember findOldMember = entityManager.find(OldMember.class,2L);
 
             // 수정.
-            findMember.setUsername("changed");
+            findOldMember.setUsername("changed");
 
-            System.out.println("findMember.getId() = " + findMember.getId());
-            System.out.println("findMember.getName() = " + findMember.getUsername());
+            System.out.println("findMember.getId() = " + findOldMember.getId());
+            System.out.println("findMember.getName() = " + findOldMember.getUsername());
 
             // 삭제
 //            entityManager.remove(findMember);
@@ -51,12 +51,12 @@ public class JpaMain {
 //                entityManager.persist(dummyMember);
 //            }
 
-            List<Member> results = entityManager.createQuery("select m from Member as m", Member.class)
+            List<OldMember> results = entityManager.createQuery("select m from OldMember as m", OldMember.class)
 //                            .setFirstResult(0)
                                     .setMaxResults(2)
                                             .getResultList();
 
-            for(Member result:results){
+            for(OldMember result:results){
                 System.out.println("result.getName() = " + result.getUsername());
             }
 
