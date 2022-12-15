@@ -5,6 +5,7 @@
 
 ex1-hello-jpa
 * ch4까지 jpa 실습을 위해 사용함.
+* ch10 : jpql 실습을 위해 사용함.
 
 jpashop
 * 실전예제 용으로 사용하는 프로젝트;
