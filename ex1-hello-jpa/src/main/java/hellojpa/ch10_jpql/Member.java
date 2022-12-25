@@ -20,6 +20,9 @@ public class Member {
     @JoinColumn(name = "TEAM_ID")
     private Team team;
 
+    @Enumerated(EnumType.STRING)
+    private MemberType type;
+
     // 연관관계 편의 메서드
     public void chageTeam(Team team){
         this.team = team;
