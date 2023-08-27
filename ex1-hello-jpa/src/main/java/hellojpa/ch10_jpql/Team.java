@@ -2,6 +2,7 @@ package hellojpa.ch10_jpql;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +21,7 @@ public class Team {
     private Long id;
     private String name;
 
+    @BatchSize(size = 1000)
     @OneToMany(mappedBy = "team")
     private List<Member> members = new ArrayList<>();
 }
