@@ -82,7 +82,7 @@ public class S03_jpqlfetchjoin2 {
 //                System.out.println(teamItem.getName() + teamItem.getMembers().size());
 //            }
 
-            // 3 fetch join -> 일대 다에서 사용하는 경우. distinct 사용.
+            // 3 fetch join -> 일대 다에서 사용하는 경우. Team에 batchSize를 추가하면, N+1 문제 안생기면서, 페이징도 가능.
             String query = "select t from Team t";
             List<Team> result = entityManager.createQuery(query, Team.class)
                 .setFirstResult(0)
