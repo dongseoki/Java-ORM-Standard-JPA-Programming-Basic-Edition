@@ -1,5 +1,6 @@
+import domain.Album;
+import domain.Item;
 import domain.Member;
-import domain.Movie;
 import domain.Team;
 import persistAndOrphan.Child;
 import persistAndOrphan.Parent;
@@ -18,6 +19,9 @@ public class JpaMainDoNothing {
         transaction.begin();
 
         try {
+            Album album = new Album("artist", "name", 1000);
+            entityManager.persist(album);
+
 //            Movie movie = new Movie();
             Parent parent = new Parent();
             Child ch1 = new Child();
